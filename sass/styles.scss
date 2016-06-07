@@ -369,6 +369,29 @@ body {
 }
 
 
+/* SPECIAL */
+
+.special {
+    .content {
+        min-height: 100px;
+        height: auto;
+        h1 {
+            &.title {
+                display: block;
+                text-align: center;
+            }
+        }
+        .meta {
+            color: #9E9E9E;
+            border: none;
+            font-size: 12px;
+            span {
+                margin: 0 16px 0 0;
+            }
+        }
+    }
+}
+
 /* RESPONSIVE */
 
 @media screen and (min-width: 901px) {
@@ -476,4 +499,12 @@ body {
       }
     }
   }
+}
+
+@media screen and (max-width: 479px) {
+    .top {
+        height: 50px;
+        line-height: 50px;
+        margin: 0 0 16px 0;
+    }
 }
