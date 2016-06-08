@@ -90,8 +90,17 @@ body {
       font-family: "PT Serif", serif;
       font-weight: 400;
       color: #9E9E9E;
-      margin: 0 0 24px 0;
+      margin: 0 0 10px 0;
       text-align: center;
+    }
+    &.latest-title {
+      font-family: "PT Serif", serif;
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #9E9E9E;
+      border-bottom: 1px solid #EEE;
     }
   }
   p {
@@ -173,6 +182,42 @@ body {
           background-color: #3F51B5;
           border-radius: 2px;
         }
+      }
+    }
+  }
+}
+
+.special-item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0 0 32px 0;
+  a {
+    display: block;
+    .image {
+      img {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 12px 0;
+      }
+    }
+
+    .info {
+      width: 100%;
+      box-sizing: border-box;
+      color: #212121;
+      h1 {
+        font-size: 36px;
+        line-height: 1.25;
+        text-align: center;
+        margin: 0 0 8px 0;
+      }
+      p {
+        font-weight: 400;
+        text-align: center;
+        font-size: 18px;
+        line-height: 22px;
+        color: #9E9E9E;
       }
     }
   }
@@ -262,6 +307,8 @@ body {
       }
     }
   }
+
+
 }
 
 // SOURCES
@@ -309,6 +356,20 @@ body {
   text-align: center;
   color: #9E9E9E;
   padding: 50px 0 50px 0;
+}
+
+/* SOCIAL */
+
+.social {
+  width: 150px;
+  padding: 0 0 12px 0;
+  margin: 0 auto 0 auto;
+}
+
+.comments {
+  max-width: 728px;
+  width: 100%;
+  margin: 24px auto 24px auto;
 }
 
 

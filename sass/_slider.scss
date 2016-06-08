@@ -3,8 +3,6 @@
 
 .slideshow {
   width: 100%;
-  min-height: 700px;
-  height: calc(100vh - 130px);
   background-color: #212121;
   display: -webkit-flex;
   display: -moz-flex;
@@ -15,9 +13,7 @@
 
   .slide-wrap {
     position: relative;
-    max-width: 1000px;
     width: 100%;
-    height: 500px;
 
     button {
       position: absolute;
@@ -30,11 +26,16 @@
       color: #FFF;
       background-color: #E91E63;
       border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      background-position: center;
       &#slide-left {
         left: -100px;
+        background-image: url(/assets/design/img/left.png);
       }
       &#slide-right {
         right: -100px;
+        background-image: url(/assets/design/img/right.png);
       }
       &:hover {
         cursor: pointer;
@@ -107,7 +108,13 @@
 
 
 @media (min-width: 1000px) {
-
+  .slideshow {
+    height: 600px;
+    .slide-wrap {
+        max-width: 1000px;
+        height: 500px;
+    }
+  }
 }
 
 @media (min-width:720px) and (max-width: 999px) {
@@ -192,6 +199,72 @@
 
       .slide-wrap {
           width: 360px;
+          height: 700px;
+          button {
+            z-index: 9999;
+            top: 150px;
+            &#slide-left {
+              left: 10px;
+            }
+            &#slide-right {
+              right: 10px;
+            }
+          }
+          .slider {
+            width: 100%;
+            height: 700px;
+            .slide-item {
+              display: block;
+              .image {
+                height: 200px;
+                width: 100%;
+              }
+              .info {
+                height: 500px;
+                width: 100%;
+                h1 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 13px;
+                }
+              }
+            }
+          }
+      }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+
+    .special {
+      .content {
+        h1.title {
+          font-size: 30px;
+        }
+        h2.sub-title {
+          font-size: 18px;
+          margin: 0 0 12px 0;
+        }
+
+        .meta {
+          span {
+            display: block;
+          }
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    .slideshow {
+      height: 700px;
+      padding: 0;
+      background-color: #FFF;
+
+      .slide-wrap {
+          width: 320px;
           height: 700px;
           button {
             z-index: 9999;

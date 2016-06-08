@@ -31,17 +31,13 @@ window.onload = function() {
 
   slideLeftBtn.addEventListener('click', function(){
       slideLeft();
-      setTimeout(function() {
-          disableRightButton();
-          disableLeftButton();
-      }, 1000, false);
+      disableRightButton();
+      disableLeftButton();
   });
   slideRightBtn.addEventListener('click', function(){
       slideRight();
-      setTimeout(function() {
-          disableRightButton();
-          disableLeftButton();
-      }, 1000, false);
+      disableRightButton();
+      disableLeftButton();
   });
 
   function slideLeft() {
@@ -49,7 +45,7 @@ window.onload = function() {
         var item = slideItems[i];
         var offset = parseInt(item.style.left, 10);
         var offsetUpdate = offset + sliderWidth;
-        moveLeft(item, offset, offsetUpdate);
+        item.style.left=offsetUpdate + 'px';
     }
   }
 
@@ -58,40 +54,9 @@ window.onload = function() {
           var item = slideItems[i];
           var offset = parseInt(item.style.left, 10);
           var offsetUpdate = offset - sliderWidth;
-          moveRight(item, offset, offsetUpdate);
+          item.style.left=offsetUpdate + 'px';
       }
   }
-
-
-  // Animate scroll
-
-  function moveLeft(elem, offset, offsetUpdate) {
-      var left = offset;
-      var goal = offsetUpdate;
-      function frame() {
-          left += 20;
-          elem.style.left=left + 'px';
-          if (left < goal) {
-              window.requestAnimationFrame(frame);
-          }
-      }
-      window.requestAnimationFrame(frame);
-  }
-
-  function moveRight(elem, offset, offsetUpdate) {
-      var left = offset;
-      var goal = offsetUpdate;
-
-      function frame() {
-          left -= 20;
-          elem.style.left=left + 'px';
-          if (left > goal) {
-              window.requestAnimationFrame(frame);
-          }
-      }
-      window.requestAnimationFrame(frame);
-  }
-
 
   // Disable buttons when no items left to scroll
   function disableLeftButton() {
